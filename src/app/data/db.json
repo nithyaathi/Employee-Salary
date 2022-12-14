@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "name": "Aathilakshmi",
+      "department": "Backend Developer",
+      "sex": "Female",
+      "status": "single",
+      "salary": "9000",
+      "address": "sivagngai",
+      "phone": "900090876",
+      "email": "nithya@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Nithya",
+      "department": "Backend Developer",
+      "sex": "Female",
+      "status": "single",
+      "salary": "90000",
+      "address": "sivagangai",
+      "phone": "789065339",
+      "email": "gayu@gmail.com"
+    },
+    {
+      "id": 5,
+      "name": "aathi",
+      "department": "IT Recruiter",
+      "sex": "Male",
+      "status": "single",
+      "salary": "80000",
+      "address": "cholapuram",
+      "phone": "8907654",
+      "email": "fghf@gmail.com"
+    },
+    {
+      "id": 7,
+      "name": "Nivetha",
+      "department": "Software Engineer",
+      "sex": "Female",
+      "status": "single",
+      "salary": "9000",
+      "address": "sivagangai",
+      "phone": "9087654320",
+      "email": "nithyaathi@gmail.com"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

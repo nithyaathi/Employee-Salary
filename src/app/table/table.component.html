@@ -1,0 +1,124 @@
+
+<nav class="navbar navbar-light bg-primary"> 
+    <div class="container-fluid">
+        <h1 style="color:white">Employee Salary Management Details </h1>
+        <div class="d-flex">
+            
+        </div>
+    </div>
+  </nav>
+  <table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Employee ID</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Department</th>
+            <th scope="col">Sex</th>
+            <th scope="col">Marrital Status</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+          
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+  
+  <tbody>
+    <tr *ngFor="let row of employeeData">
+        <td>{{row.id}}</td>
+        <td>{{row.name}}</td>
+        <td>{{row.department}}</td>
+        <td>{{row.sex}}</td>
+        <td>{{row.status}}</td>
+        <td>{{row.salary}}</td>
+        <td>{{row.phone}}</td>
+        <td>{{row.email}}</td>
+        <td>{{row.address}}</td>
+  
+            <button  (click)="onEdit(row)"   type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
+            <button (click)="deleteEmployee(row)" style="color: black;" class="btn btn-danger mx-3">Delete</button>
+        
+    </tr>
+  </tbody>
+  </table>
+  
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <form [formGroup]="formValue">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Employee Name</label>
+              <input type="txt" class="form-control" formControlName="name" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+             
+              <select formControlName="department" style="float: left; width: 470px; height: 35px;">
+                <option value="">Department</option>
+                <option value="IT Recruiter">IT Recruiter</option>
+                <option value="Software Engineer">Software Engineer</option>
+                <option value="Backend Developer">Backend Developer</option>
+                <option value="Fullstack Developer">Fullstack Developer</option>
+                <option value="Frontend Developer">Frontend Developer</option>
+            </select>
+            
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Sex</label><br>
+              
+              <input class="form-check-input" formControlName="sex" type="radio" value="Male" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Male
+              </label>
+              <input class="form-check-input"  formControlName="sex" type="radio" value="Female" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Female
+              </label>
+              <input class="form-check-input"  formControlName="sex" type="radio" value="Transgender" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Transgender
+              </label><br>
+            </div>
+            
+            
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Marrital Status</label>
+                <input type="txt" class="form-control" formControlName="status" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Salary</label>
+                <input type="txt" class="form-control" formControlName="salary" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+          
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Phone Number</label>
+                <input type="txt" class="form-control" formControlName="phone" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="txt" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Address</label>
+                <input type="txt" class="form-control" formControlName="address" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+
+        </form></div>
+        
+
+      
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="updateEmployeeDetails()"  class="btn btn-primary">Update</button>
+    </div>
+    </div>
+  </div>
